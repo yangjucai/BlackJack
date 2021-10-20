@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        function subm() {
+            let information = document.getElementById("tips");
+            let h5 = document.createElement('h5')
+            h5.innerText = "Welcome to BlackJack! Player "+document.getElementById("name").value+"\n You have " + document.getElementById("money").value+"$";
+            information.appendChild(h5);
+            //information.innerText = "Welcome to BlackJack! Player "+document.getElementById("name").value;
+
+
+        }
+
+    </script>
+</head>
+<body>
+<h1 align="center">Black Jack Game</h1>
+<h2>---------------Interaction Area：---------------</h2>
+<div id="tips" style="height: 200px;overflow: auto ">
+    <h5 id = "inter">Please input your name and money!</h5>
+</div>
+
+<form method="post" name="player_info">
+    name: <input th:type="text" id="name"><br>
+    money: <input th:type="text" id="money"><br>
+    <input type="button" value="submit" onclick="subm()">
+</form>
+
+<form method="post" id = "my_radio">
+    <input type="radio" name="action" value="1">1. 开始游戏<br>
+    <input type="radio" name="action" value="2">2. 查看金钱<br>
+    <input type="radio" name="action" value="3">3. 结束游戏<br>
+    <input type="submit" value="submit">
+</form>
+
+</body>
+</html>
